@@ -1,0 +1,73 @@
+### Create a product
+
+### Create a user : Signup
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "name" : "Teyi",
+    "email": "teyi@gmail.com",
+    "password": "Teyi"
+}
+
+
+### LOGIN a user : Signin
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+    "email": "aellah@gmail.com",
+    "password": "aellah"
+}
+
+
+POST http://localhost:4000/api/product
+content-type: application/json
+
+{
+    "name" : "water",
+    "price": 56.99
+}
+
+### Get all products
+GET  http://localhost:4000/api/product
+
+### Get one product
+GET  http://localhost:4000/api/product/63108d3f01c6690ffe694655
+
+### Get a user
+GET  http://localhost:4000/api/user/63128455573ffd72202390c2
+
+### Create a product
+POST  http://localhost:4000/api/product
+content-type: application/json
+
+{
+    "name" : "Le vieux nègre et la medaille",
+    "price": 36.99,
+    "description" : "Ferdinand oyono"
+}
+
+
+### Post a payment to stripe
+POST  http://localhost:4000/api/stripe
+content-type: application/json
+
+{
+    "cart" : [
+        {
+            "name": "Le vieux nègre et la medaille",
+            "price": 36.99,
+            "quantity" : 5,
+            "description": "Ferdinand oyono",
+            "_id": "6316501cfabb22a86b06780f",
+            "__v": 0
+        }
+    ]
+}
+
+
+
+### Delete a product
+
+DELETE http://localhost:4000/product/6310a35b01c6690ffe694657
